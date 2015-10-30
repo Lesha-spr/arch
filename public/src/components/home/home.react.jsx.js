@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 
-class Projects extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <div>Projects</div>;
+        return <div>Home</div>;
     }
 }
 
-export default Projects;
+export default Home;

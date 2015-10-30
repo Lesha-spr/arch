@@ -1,9 +1,11 @@
 import keyMirror from 'keymirror';
 
-export default {
-    Nav: {
-        ActionTypes: keyMirror({
-            GET: null
-        })
-    }
-}
+export const SERVICES = {
+    NAV: '/backend/nav'
+};
+
+export const Nav = {
+    ActionTypes: keyMirror({
+        GET: null
+    })
+};

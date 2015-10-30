@@ -1,0 +1,18 @@
+{
+  "nav": [
+    {
+      "_id": 0,
+      "title": "Projects",
+      "entries": [
+        {
+          "title": "Project1",
+          "permalink": "/projects/project1"
+        },
+        {
+          "title": "Project2",
+          "permalink": "/projects/project2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 
-class Projects extends Component {
+class NotFound extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <div>Projects</div>;
+        return <h1>NotFound</h1>;
     }
 }
 
-export default Projects;
+export default NotFound;

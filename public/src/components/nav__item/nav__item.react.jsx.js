@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 
-class Projects extends Component {
+class NavItem extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <div>Projects</div>;
+        return <div className='nav__item'>NavItem</div>;
     }
 }
 
-export default Projects;
+export default NavItem;
