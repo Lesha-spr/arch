@@ -1,0 +1,9 @@
+@include global-box-sizing(border-box);
+
+$susy: (
+  global-box-sizing: border-box,
+  columns: 16,
+  gutters: .25,
+  gutter-position: inside,
+  container-position: center
+);

@@ -4,7 +4,7 @@ import Footer from './../footer/footer.rect.jsx';
 
 class Root extends Component {
     render() {
-        return <div>
+        return <div className='container'>
             <Header/>
             Root
             {this.props.children}

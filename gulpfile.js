@@ -40,6 +40,7 @@ gulp.task('compress', function() {
 
 gulp.task('watch', function() {
     gulp.watch('./public/src/**/*.js*', ['compress']);
+    gulp.watch('./public/src/**/*.scss', ['sass']);
 });
 
 gulp.task('build', ['sass', 'compress']);
