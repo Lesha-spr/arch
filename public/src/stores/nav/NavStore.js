@@ -1,26 +1,12 @@
 import {EventEmitter} from 'events';
-import reqwest from 'reqwest';
 import Dispatcher from './../../dispatcher.js';
 import NavActions from './../../actions/nav/NavActions.js';
-import {Nav, SERVICES as ActionTypes, SERVICES} from './../../constants.js';
+import {Nav as ActionTypes} from './../../constants.js';
 
 const GET_EVENT = 'get';
 
 let _nav = {
     nav: []
-};
-
-let fetch = () => {
-    return reqwest({
-        url: SERVICES.NAV,
-        type: 'json',
-        method: 'GET',
-        success: data => {
-            if (data) {
-                _nav = data
-            }
-        }
-    });
 };
 
 class NavStore extends EventEmitter {
@@ -52,10 +38,8 @@ store.dispatchToken = Dispatcher.register(action => {
     switch(action.type) {
 
         case ActionTypes.GET:
-            fetch()
-                .then(() => {
-                    store.emitGet();
-                });
+            _nav = action.data;
+            store.emitGet();
 
             break;
     }
