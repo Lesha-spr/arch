@@ -3,16 +3,24 @@
     {
       "_id": 0,
       "title": "Projects",
-      "entries": [
+      "permalink": "/projects",
+      "children": [
         {
-          "title": "Project1",
-          "permalink": "/projects/project1"
+          "_id": 0,
+          "title": "Architecture",
+          "permalink": "/projects/architecture"
         },
         {
-          "title": "Project2",
-          "permalink": "/projects/project2"
+          "_id": 1,
+          "title": "Design",
+          "permalink": "/projects/design"
         }
       ]
+    },
+    {
+      "_id": 1,
+      "title": "About",
+      "permalink": "/about"
     }
   ]
 }

@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import NavActions from './../../actions/nav/NavActions.js';
 import NavStore from './../../stores/nav/NavStore.js';
+import Translate from 'react-translate-component';
+import classNames from 'classnames';
 
 import NavItem from './../nav__item/nav__item.react.jsx.js';
 
@@ -24,7 +26,12 @@ class Nav extends Component {
     }
 
     render() {
-        return <nav className='nav'>
+        let className = classNames({
+            'nav': true,
+            'nav_state_loading': this.state.loading
+        });
+
+        return <nav className={className}>
             {this.state.nav.map(item => {
                 return <NavItem key={item._id} {...item}/>;
             })}

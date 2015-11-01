@@ -1,1 +1,25 @@
-.nav__item {}
+.nav__item {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+
+  &_sub {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s ease .25s, opacity .25s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #6B6F73;
+    border: 1px solid #000;
+    padding: 10px;
+  }
+
+  &:hover {
+    .nav__item_sub {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
+}

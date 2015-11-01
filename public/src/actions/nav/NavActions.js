@@ -1,5 +1,5 @@
 import Dispatcher from './../../dispatcher.js';
-import {Nav as ActionTypes} from './../../constants.js';
+import {Nav} from './../../constants.js';
 import navFetch from './navFetch.js';
 
 export default {
@@ -7,7 +7,7 @@ export default {
         navFetch()
             .then(data => {
                 Dispatcher.dispatch({
-                    type: ActionTypes.GET,
+                    type: Nav.ActionTypes.NAV_GET,
                     data: data
                 });
             });

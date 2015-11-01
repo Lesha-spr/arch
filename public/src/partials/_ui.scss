@@ -1,8 +1,9 @@
 .ui-link {
-  color: #049cdb;
+  color: #33c3ff;
+  transition: color, .25s, ease;
 
   &_state_active {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     cursor: text;
   }

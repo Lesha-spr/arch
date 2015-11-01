@@ -1,12 +1,13 @@
 import {EventEmitter} from 'events';
 import Dispatcher from './../../dispatcher.js';
 import NavActions from './../../actions/nav/NavActions.js';
-import {Nav as ActionTypes} from './../../constants.js';
+import {Nav} from './../../constants.js';
 
 const GET_EVENT = 'get';
 
 let _nav = {
-    nav: []
+    nav: [],
+    loading: true
 };
 
 class NavStore extends EventEmitter {
@@ -37,8 +38,10 @@ store.dispatchToken = Dispatcher.register(action => {
 
     switch(action.type) {
 
-        case ActionTypes.GET:
+        case Nav.ActionTypes.NAV_GET:
             _nav = action.data;
+            _nav.loading = false;
+
             store.emitGet();
 
             break;

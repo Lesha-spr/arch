@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
-import Header from './../header/header.rect.jsx';
-import Footer from './../footer/footer.rect.jsx';
+import Header from './../header/header.react.jsx';
+import Footer from './../footer/footer.react.jsx';
 
 class Root extends Component {
     constructor(props) {
@@ -8,9 +8,8 @@ class Root extends Component {
     }
 
     render() {
-        return <div className='container'>
+        return <div>
             <Header/>
-            Root
             {this.props.children}
             <Footer/>
         </div>;
