@@ -8,15 +8,19 @@ class Home extends Component {
 
     render() {
         return <div className='home'>
-            <Shuffled projects={this.props.root.projects}/>
+            <Shuffled {...this.props}/>
         </div>;
     }
 }
 
 Home.propTypes = {
     root: PropTypes.shape({
-        projects: PropTypes.array,
-        loading: PropTypes.bool
+        projects: PropTypes.arrayOf(PropTypes.shape({
+            _id: PropTypes.string,
+            type: PropTypes.string,
+            src: PropTypes.string
+        })),
+        async: PropTypes.bool
     })
 };
 

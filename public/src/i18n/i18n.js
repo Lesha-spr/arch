@@ -6,14 +6,20 @@ counterpart.registerTranslations('en', {
         About: 'About',
         Architecture: 'Architecture',
         Design: 'Design'
+    },
+    global: {
+        author: 'Tkachuk'
     }
 });
 
 counterpart.registerTranslations('ru', {
     nav: {
         Projects: 'Проекты',
-        About: 'Про Тка4а',
+        About: 'Про Ткачука',
         Architecture: 'Архитектура',
         Design: 'Дизайн'
+    },
+    global: {
+        author: 'Ткачук'
     }
 });

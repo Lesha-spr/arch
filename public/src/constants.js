@@ -6,6 +6,14 @@ const DEFAULTS = {
     locale: 'ru'
 };
 
+export const Root = {
+    ActionTypes: keyMirror({
+        ASYNC_BEFORE: null,
+        ASYNC_COMPLETE: null,
+        ASYNC_FAIL: null
+    })
+};
+
 export const COOKIES = {
     locale: 'arch.locale'
 };

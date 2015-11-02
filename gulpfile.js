@@ -8,9 +8,10 @@ var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 var inject = require('gulp-inject');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var gulpCopy = require('gulp-copy');
 
-gulp.task('sass', function () {
+gulp.task('sass', function() {
     gulp.src('public/src/app.scss')
         .pipe(inject(gulp.src(['./components/**/*.scss'], {read: false, cwd: 'public/src/'}), {
             starttag: '/* inject:imports */',
@@ -20,6 +21,9 @@ gulp.task('sass', function () {
             }
         }))
         .pipe(sass.sync().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 3 versions']
+        }))
         .pipe(gulp.dest('./public/build'));
 });
 

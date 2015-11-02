@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import Translate from 'react-translate-component';
+import RootActions from './../../actions/root/RootActions.js';
 import Spinner from './../spinner/spinner.react.jsx';
 import classNames from 'classnames';
 import _ from 'lodash';
@@ -8,34 +9,31 @@ import _ from 'lodash';
 class Shuffled extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            loading: true
-        };
 
         this.loadedProjectsCount = 0;
+    }
+
+    componentWillMount() {
+        RootActions.asyncBefore(true);
     }
 
     handleLoad() {
         this.loadedProjectsCount++;
 
-        if (this.loadedProjectsCount === this.props.projects.length) {
-            this.setState({
-                loading: false
-            });
+        if (this.loadedProjectsCount === this.props.root.projects.length) {
+            RootActions.asyncComplete(true);
         }
     }
 
     render() {
         let className = classNames({
             'shuffled': true,
-            'shuffled_state_loading': this.state.loading
+            'shuffled_state_loading': this.props.root.async
         });
-        let spinner = this.state.loading ? <Spinner/> : '';
 
         return <div className={className}>
-            {spinner}
             <div className='shuffled__inner'>
-                {_.shuffle(this.props.projects).map(project => {
+                {_.shuffle(this.props.root.projects).map(project => {
                     return <Link key={project._id} to={`/projects/${project.type}/${project.permalink}`} className='ui-link shuffled__item'>
                         <span className='shuffled__item-link'>{project._id}</span>
                         <img
@@ -53,11 +51,14 @@ class Shuffled extends Component {
 }
 
 Shuffled.propTypes = {
-    projects: PropTypes.arrayOf(PropTypes.shape({
-        _id: PropTypes.string,
-        type: PropTypes.string,
-        src: PropTypes.string
-    }))
+    root: PropTypes.shape({
+        projects: PropTypes.arrayOf(PropTypes.shape({
+            _id: PropTypes.string,
+            type: PropTypes.string,
+            src: PropTypes.string
+        })),
+        async: PropTypes.bool
+    })
 };
 
 export default Shuffled;

@@ -1,5 +1,5 @@
 import Dispatcher from './../../dispatcher.js';
-import {Projects} from './../../constants.js';
+import {Projects, Root} from './../../constants.js';
 import projectsFetch from './projectsFetch.js';
 
 export default {

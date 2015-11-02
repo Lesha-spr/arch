@@ -21,19 +21,7 @@
   width: 100px;
   clip: rect(0px, 60px, 50px, 0px);
 
-  -moz-animation:rotate 2s;
-  -moz-animation-timing-function: linear;
-  -moz-animation-iteration-count: infinite;
-
-  -webkit-animation:rotate 2s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-
-  -ms-animation:rotate 2s;
-  -ms-animation-timing-function: linear;
-  -ms-animation-iteration-count: infinite;
-
-  animation:rotate 2s;
+  animation: rotate 2s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
