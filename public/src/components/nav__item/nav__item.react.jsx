@@ -20,7 +20,7 @@ class NavItem extends Component {
 
         return <div className='nav__item'>
             <Link className='ui-link' activeClassName='ui-link_state_active' to={this.props.permalink}>
-                <Translate content={`nav.${this.props.title}`}></Translate>
+                <Translate content={`nav.${this.props._id}`}></Translate>
             </Link>
             {children}
         </div>;
@@ -28,8 +28,8 @@ class NavItem extends Component {
 }
 
 NavItem.propTypes = {
-    permalink: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired
+    _id: PropTypes.string.isRequired,
+    permalink: PropTypes.string.isRequired
 };
 
 export default NavItem;

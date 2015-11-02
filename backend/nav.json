@@ -1,25 +1,23 @@
 {
   "nav": [
     {
-      "_id": 0,
-      "title": "Projects",
+      "_id": "Projects",
       "permalink": "/projects",
       "children": [
         {
-          "_id": 0,
-          "title": "Architecture",
+          "_id": "Architecture",
+          "type": "root",
           "permalink": "/projects/architecture"
         },
         {
-          "_id": 1,
-          "title": "Design",
+          "_id": "Design",
+          "type": "root",
           "permalink": "/projects/design"
         }
       ]
     },
     {
-      "_id": 1,
-      "title": "About",
+      "_id": "About",
       "permalink": "/about"
     }
   ]
