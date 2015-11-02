@@ -7,3 +7,13 @@ $susy: (
   gutter-position: inside,
   container-position: center
 );
+
+$bps: (
+  iphonePortrait: 320px,
+  iphoneLandscape: 480px,
+  ipadPortrait: 768px,
+  ipadLandscape: 1024px,
+  netbook: 1200px,
+  laptop: 1366px,
+  desktop: 1680px
+);

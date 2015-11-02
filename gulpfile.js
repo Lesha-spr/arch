@@ -8,6 +8,7 @@ var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var bulkSass = require('gulp-sass-bulk-import');
+var gulpCopy = require('gulp-copy');
 
 gulp.task('sass', function () {
     gulp.src('./public/src/app.scss')
@@ -38,10 +39,16 @@ gulp.task('compress', function() {
         .pipe(gulp.dest('public/build'));
 });
 
-gulp.task('watch', function() {
-    gulp.watch('./public/src/**/*.js*', ['compress']);
-    gulp.watch('./public/src/**/*.scss', ['sass']);
+gulp.task('copy', function() {
+    return gulp.src('./public/src/images/**/*')
+        .pipe(gulpCopy('./public/build', {prefix: 2}));
 });
 
-gulp.task('build', ['sass', 'compress']);
-gulp.task('default', ['sass', 'compress', 'watch']);
+gulp.task('watch', function() {
+    gulp.watch('./public/src/images/**/*', ['copy']);
+    gulp.watch('./public/src/**/*.scss', ['sass']);
+    gulp.watch('./public/src/**/*.js*', ['compress']);
+});
+
+gulp.task('build', ['copy', 'sass', 'compress']);
+gulp.task('default', ['copy', 'sass', 'compress', 'watch']);

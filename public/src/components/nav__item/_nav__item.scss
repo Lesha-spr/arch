@@ -4,12 +4,13 @@
   margin-right: 10px;
 
   &_sub {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s ease .25s, opacity .25s ease;
-    position: absolute;
-    top: 100%;
-    left: 0;
     background: #6B6F73;
     border: 1px solid #000;
     padding: 10px;

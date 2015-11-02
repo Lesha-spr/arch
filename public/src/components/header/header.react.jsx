@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {IndexLink} from 'react-router';
-import Nav from './../nav/nav.react.jsx.js';
-import Locale from './../locale/locale.react.jsx.js';
+import Nav from './../nav/nav.react.jsx';
+import Locale from './../locale/locale.react.jsx';
 
 class Header extends Component {
     constructor(props) {

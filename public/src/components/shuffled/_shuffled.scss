@@ -1,0 +1,67 @@
+.shuffled {
+  position: relative;
+
+  $shuffledLayout: (
+    columns: 12,
+    gutters: 0
+  );
+
+  @include with-layout($shuffledLayout) {
+
+    @at-root {
+      .shuffled__inner {
+        @include container();
+
+        .shuffled_state_loading & {
+          visibility: hidden;
+        }
+      }
+
+      .shuffled__item {
+        transition: none;
+        position: relative;
+        display: block;
+      }
+
+      @include susy-breakpoint(susy-get(iphoneLandscape, $bps) + 1 susy-get(ipadPortrait, $bps) - 1) {
+        .shuffled__item {
+          @include span(6);
+
+          &:nth-of-type(odd) {
+            @include break;
+          }
+        }
+      }
+
+      @include susy-breakpoint(susy-get(ipadPortrait, $bps) susy-get(netbook, $bps) - 1) {
+        .shuffled__item {
+          @include span(4);
+
+          &:nth-of-type(3n-2) {
+            @include break;
+          }
+        }
+      }
+
+      @include susy-breakpoint(susy-get(netbook, $bps)) {
+        .shuffled__item {
+          @include span(3);
+
+          &:nth-of-type(4n + 1) {
+            @include break;
+          }
+        }
+      }
+
+      .shuffled__item-link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .shuffled__item-image {
+        display: block;
+      }
+    }
+  }
+}

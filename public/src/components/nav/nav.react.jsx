@@ -1,10 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import NavActions from './../../actions/nav/NavActions.js';
 import NavStore from './../../stores/nav/NavStore.js';
-import Translate from 'react-translate-component';
 import classNames from 'classnames';
 
-import NavItem from './../nav__item/nav__item.react.jsx.js';
+import NavItem from './../nav__item/nav__item.react.jsx';
 
 class Nav extends Component {
     constructor(props) {

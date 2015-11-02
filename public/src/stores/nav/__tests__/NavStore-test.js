@@ -1,24 +1,20 @@
+jest.dontMock('keymirror');
 jest.dontMock('./../../../constants');
 jest.dontMock('./../NavStore');
 
 describe('NavStore', function() {
-    var Constants = require('./../../../constants');
+    var Constants = require('./../../../constants').Nav;
     var Dispatcher;
     var NavStore;
     var callback;
     var emptyStoreData;
-
-    // mock actions
-    var actionNavGet = {
-        actionType: Constants.Nav.GET
-    };
 
     beforeEach(function() {
         Dispatcher = require('./../../../dispatcher');
         NavStore = require('./../NavStore');
         emptyStoreData = {
             nav: [],
-            loading: false
+            loading: true
         };
         callback = Dispatcher.register.mock.calls[0][0];
     });
@@ -32,7 +28,12 @@ describe('NavStore', function() {
     });
 
     it('should update nav', function() {
-        callback(actionNavGet);
+        callback({
+            type: Constants.ActionTypes.NAV_GET,
+            data: {
+                nav: []
+            }
+        });
 
         expect(NavStore.getAll()).not.toEqual(emptyStoreData);
     });

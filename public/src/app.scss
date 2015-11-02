@@ -7,4 +7,5 @@
 
 .container {
   @include container(1200px);
+  padding: 0 20px;
 }

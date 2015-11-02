@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 var services = {
-    nav: require('../backend/nav.json')
+    nav: require('../backend/nav.json'),
+    projects: require('../backend/projects.json')
 };
 
 router.get('/backend/:service', function(req, res, next) {

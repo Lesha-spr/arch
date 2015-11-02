@@ -23,12 +23,19 @@ Object.keys(COOKIES).forEach(cookie => {
 export var params = _.assign({}, DEFAULTS, settings);
 
 export const SERVICES = {
-    NAV: '/backend/nav'
+    NAV: '/backend/nav',
+    PROJECTS: '/backend/projects'
 };
 
 export const Nav = {
     ActionTypes: keyMirror({
         NAV_GET: null
+    })
+};
+
+export const Projects = {
+    ActionTypes: keyMirror({
+        PROJECTS_GET: null
     })
 };
 

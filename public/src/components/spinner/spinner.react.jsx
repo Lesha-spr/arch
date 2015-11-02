@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
 
-class Home extends Component {
+class Spinner extends Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        return <div>Home</div>;
+        return <div className='spinner'></div>;
     }
 }
 
-export default Home;
+export default Spinner;
