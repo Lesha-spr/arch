@@ -1,11 +1,11 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Router} from 'react-router'
-import {createHistory} from 'history'
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import i18n from './i18n/i18n.js';
 import routes from './routes.jsx';
 
-let history = createHistory();
+let history = createBrowserHistory();
 
 render(
     <Router history={history}>
