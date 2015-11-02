@@ -3,7 +3,12 @@
 @import "partials/config";
 @import "partials/base";
 @import "partials/ui";
-@import "components/*";
+
+// NOTE: following comment need to handle inject
+
+// main.less
+/* inject:imports */
+/* endinject */
 
 .container {
   @include container(1200px);

@@ -6,13 +6,19 @@ var sourcemaps = require('gulp-sourcemaps');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var uglify = require('gulp-uglify');
+var inject = require('gulp-inject');
 var sass = require('gulp-sass');
-var bulkSass = require('gulp-sass-bulk-import');
 var gulpCopy = require('gulp-copy');
 
 gulp.task('sass', function () {
-    gulp.src('./public/src/app.scss')
-        .pipe(bulkSass())
+    gulp.src('public/src/app.scss')
+        .pipe(inject(gulp.src(['./components/**/*.scss'], {read: false, cwd: 'public/src/'}), {
+            starttag: '/* inject:imports */',
+            endtag: '/* endinject */',
+            transform: function (filepath) {
+                return '@import ".' + filepath + '";';
+            }
+        }))
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('./public/build'));
 });
