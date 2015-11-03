@@ -1,7 +1,6 @@
 jest.dontMock('./../projectsFetch');
 
 describe('projectsFetch', function() {
-    var SERVICES = require('./../../../constants').SERVICES;
     var reqwest;
     var projectsFetch;
 
@@ -13,10 +12,6 @@ describe('projectsFetch', function() {
     it('should call async request', function() {
         projectsFetch();
 
-        expect(reqwest).toBeCalledWith({
-            url: SERVICES.PROJECTS,
-            type: 'json',
-            method: 'GET'
-        });
+        expect(reqwest).toBeCalled();
     });
 });
