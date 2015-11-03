@@ -3,7 +3,7 @@ import NavActions from './../../actions/nav/NavActions.js';
 import NavStore from './../../stores/nav/NavStore.js';
 import classNames from 'classnames';
 
-import NavItem from './../nav__item/nav__item.react.jsx';
+import NavItem from './nav__item.react.jsx';
 
 class Nav extends Component {
     constructor(props) {
