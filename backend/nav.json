@@ -6,12 +6,12 @@
       "children": [
         {
           "_id": "Architecture",
-          "type": "root",
+          "type": "projects",
           "permalink": "/projects/architecture"
         },
         {
           "_id": "Design",
-          "type": "root",
+          "type": "projects",
           "permalink": "/projects/design"
         }
       ]

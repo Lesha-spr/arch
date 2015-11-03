@@ -2,6 +2,10 @@
   color: #33c3ff;
   transition: color, .25s, ease;
 
+  &_style1 {
+    color: #3b3b3b;
+  }
+
   &_state_active {
     color: #fff;
     text-decoration: none;
