@@ -7,7 +7,7 @@ const GET_EVENT = 'get';
 
 let _projects = {
     projects: [],
-    loading: true
+    projectsLoading: true
 };
 
 class ProjectsStore extends EventEmitter {
@@ -40,7 +40,7 @@ store.dispatchToken = Dispatcher.register(action => {
 
         case Projects.ActionTypes.PROJECTS_GET:
             _projects = action.data;
-            _projects.loading = false;
+            _projects.projectsLoading = false;
 
             store.emitGet();
 

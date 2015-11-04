@@ -6,28 +6,15 @@ import RootActions from './../../actions/root/RootActions.js';
 class ProjectsList extends Component {
     constructor(props) {
         super(props);
-
-
-        this.state = {
-            projects: ProjectsStore.getAll().projects
-        };
-    }
-
-    // TODO: update only on new category
-    shouldComponentUpdate() {}
-
-    componentWillReceiveProps(nextProps) {
-        let projects = _.where(ProjectsStore.getAll().projects, {type: nextProps.params.category});
-
-        this.setState({
-            projects: projects
-        });
     }
 
     render() {
-        console.log(this.state);
-        return <ul className='projects-list'>
+        let projects = _.where(this.props.root.projects, {type: this.props.params.category});
 
+        return <ul className='projects-list'>
+            {projects.map(project => {
+                return <li key={project._id}>{project._id}</li>;
+            })}
         </ul>;
     }
 }
