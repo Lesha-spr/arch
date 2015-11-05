@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
+import Images from './../images/images.react.jsx';
 import ProjectsStore from './../../stores/projects/ProjectsStore.js';
 import RootActions from './../../actions/root/RootActions.js';
 
@@ -11,11 +12,15 @@ class ProjectsList extends Component {
     render() {
         let projects = _.where(this.props.root.projects, {type: this.props.params.category});
 
-        return <ul className='projects-list'>
-            {projects.map(project => {
-                return <li key={project._id}>{project._id}</li>;
-            })}
-        </ul>;
+        return <div className='projects-list'>
+            <Images {...this.props}>
+                {projects.map(project => {
+                    return <div key={project._id}>
+                        <img src={project.src} />
+                    </div>;
+                })}
+            </Images>
+        </div>;
     }
 }
 

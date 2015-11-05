@@ -11,10 +11,6 @@
     @at-root {
       .shuffled__inner {
         @include container();
-
-        .shuffled_state_loading & {
-          visibility: hidden;
-        }
       }
 
       .shuffled__item {
