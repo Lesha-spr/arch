@@ -4,7 +4,7 @@
       "_id": "Arch 1",
       "type": "architecture",
       "src": "/build/images/projects/project-1.jpg",
-      "permalink": "Arch_1",
+      "permalink": "arch_1",
       "i18n": {
         "en": {
           "title": "Arch 1"
@@ -18,7 +18,7 @@
       "_id": "Arch 2",
       "type": "architecture",
       "src": "/build/images/projects/project-2.jpg",
-      "permalink": "Arch_2",
+      "permalink": "arch_2",
       "i18n": {
         "en": {
           "title": "Arch 2"
@@ -32,7 +32,7 @@
       "_id": "Arch 3",
       "type": "architecture",
       "src": "/build/images/projects/project-3.jpg",
-      "permalink": "Arch_3",
+      "permalink": "arch_3",
       "i18n": {
         "en": {
           "title": "Arch 3"
@@ -46,7 +46,7 @@
       "_id": "Arch 4",
       "type": "architecture",
       "src": "/build/images/projects/project-4.jpg",
-      "permalink": "Arch_4",
+      "permalink": "arch_4",
       "i18n": {
         "en": {
           "title": "Arch 4"
@@ -60,7 +60,7 @@
       "_id": "Arch 5",
       "type": "architecture",
       "src": "/build/images/projects/project-5.jpg",
-      "permalink": "Arch_5",
+      "permalink": "arch_5",
       "i18n": {
         "en": {
           "title": "Arch 5"
@@ -74,7 +74,7 @@
       "_id": "Arch 6",
       "type": "architecture",
       "src": "/build/images/projects/project-6.jpg",
-      "permalink": "Arch_6",
+      "permalink": "arch_6",
       "i18n": {
         "en": {
           "title": "Arch 6"
@@ -88,7 +88,7 @@
       "_id": "Arch 7",
       "type": "architecture",
       "src": "/build/images/projects/project-7.jpg",
-      "permalink": "Arch_7",
+      "permalink": "arch_7",
       "i18n": {
         "en": {
           "title": "Arch 7"
@@ -102,7 +102,7 @@
       "_id": "Arch 8",
       "type": "architecture",
       "src": "/build/images/projects/project-8.jpg",
-      "permalink": "Arch_8",
+      "permalink": "arch_8",
       "i18n": {
         "en": {
           "title": "Arch 8"
@@ -116,13 +116,27 @@
       "_id": "Arch 9",
       "type": "architecture",
       "src": "/build/images/projects/project-9.jpg",
-      "permalink": "Arch_9",
+      "permalink": "arch_9",
       "i18n": {
         "en": {
           "title": "Arch 9"
         },
         "ru": {
           "title": "Арх 9"
+        }
+      }
+    },
+    {
+      "_id": "Design 1",
+      "type": "design",
+      "src": "/build/images/projects/project-9.jpg",
+      "permalink": "design_1",
+      "i18n": {
+        "en": {
+          "title": "Design 1"
+        },
+        "ru": {
+          "title": "Дизайн 1"
         }
       }
     }
