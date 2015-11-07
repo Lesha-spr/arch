@@ -24,6 +24,10 @@ class Images extends Component {
     }
 
     componentWillReceiveProps() {
+        if (!this.props.root.async) {
+            RootActions.asyncBefore(true);
+        }
+
         this.imagesLoadedLength = 0;
         this.imagesLength = 0;
     }

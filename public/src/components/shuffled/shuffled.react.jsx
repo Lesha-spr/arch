@@ -18,7 +18,7 @@ class Shuffled extends Component {
                 <div className='shuffled__inner'>
                     {_.shuffle(this.props.root.projects).map(project => {
                         return <Link key={project._id} to={`/projects/${project.type}/${project.permalink}`} className='ui-link shuffled__item'>
-                            <span className='shuffled__item-link'><Translate content={`projects-${project._id}.title`}></Translate></span>
+                            <span className='shuffled__item-link'><Translate content={`projects-${project._id}.title`}/></span>
                             <img
                                 src={project.src}
                                 alt={project._id}

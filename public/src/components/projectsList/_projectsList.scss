@@ -1,0 +1,26 @@
+.projects-list {
+  $projectsListLayout: (
+    columns: 2,
+    gutters: .05
+  );
+
+  @include with-layout($projectsListLayout) {
+
+    @at-root {
+      .projects-list {
+        @include container();
+      }
+
+      .projects-list__item {
+        @include span(2);
+        margin-bottom: 20px;
+      }
+
+      @include susy-breakpoint(susy-get(ipadPortrait, $bps)) {
+        .projects-list__item {
+          @include span(1);
+        }
+      }
+    }
+  }
+}
