@@ -2,6 +2,7 @@ import Dispatcher from './../../dispatcher.js';
 import {Root} from './../../constants.js';
 import RootActions from './../../actions/root/RootActions.js';
 import _ from 'lodash';
+import registerTranslations from './../registerTranslations/registerTranslations.js'
 
 export default (params) => {
     return {
@@ -14,7 +15,8 @@ export default (params) => {
 
             (params.beforeSend || _.noop)(...arguments);
         },
-        success: () => {
+        success: (data) => {
+            registerTranslations(data);
             (params.success || _.noop)(...arguments);
         },
         complete: () => {

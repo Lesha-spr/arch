@@ -4,55 +4,127 @@
       "_id": "Arch 1",
       "type": "architecture",
       "src": "/build/images/projects/project-1.jpg",
-      "permalink": "Arch_1"
+      "permalink": "Arch_1",
+      "i18n": {
+        "en": {
+          "title": "Arch 1"
+        },
+        "ru": {
+          "title": "Арх 1"
+        }
+      }
     },
     {
       "_id": "Arch 2",
       "type": "architecture",
       "src": "/build/images/projects/project-2.jpg",
-      "permalink": "Arch_2"
+      "permalink": "Arch_2",
+      "i18n": {
+        "en": {
+          "title": "Arch 2"
+        },
+        "ru": {
+          "title": "Арх 2"
+        }
+      }
     },
     {
       "_id": "Arch 3",
       "type": "architecture",
       "src": "/build/images/projects/project-3.jpg",
-      "permalink": "Arch_3"
+      "permalink": "Arch_3",
+      "i18n": {
+        "en": {
+          "title": "Arch 3"
+        },
+        "ru": {
+          "title": "Арх 3"
+        }
+      }
     },
     {
       "_id": "Arch 4",
       "type": "architecture",
       "src": "/build/images/projects/project-4.jpg",
-      "permalink": "Arch_4"
+      "permalink": "Arch_4",
+      "i18n": {
+        "en": {
+          "title": "Arch 4"
+        },
+        "ru": {
+          "title": "Арх 4"
+        }
+      }
     },
     {
       "_id": "Arch 5",
       "type": "architecture",
       "src": "/build/images/projects/project-5.jpg",
-      "permalink": "Arch_5"
+      "permalink": "Arch_5",
+      "i18n": {
+        "en": {
+          "title": "Arch 5"
+        },
+        "ru": {
+          "title": "Арх 5"
+        }
+      }
     },
     {
       "_id": "Arch 6",
       "type": "architecture",
       "src": "/build/images/projects/project-6.jpg",
-      "permalink": "Arch_6"
+      "permalink": "Arch_6",
+      "i18n": {
+        "en": {
+          "title": "Arch 6"
+        },
+        "ru": {
+          "title": "Арх 6"
+        }
+      }
     },
     {
       "_id": "Arch 7",
       "type": "architecture",
       "src": "/build/images/projects/project-7.jpg",
-      "permalink": "Arch_7"
+      "permalink": "Arch_7",
+      "i18n": {
+        "en": {
+          "title": "Arch 7"
+        },
+        "ru": {
+          "title": "Арх 7"
+        }
+      }
     },
     {
       "_id": "Arch 8",
       "type": "architecture",
       "src": "/build/images/projects/project-8.jpg",
-      "permalink": "Arch_8"
+      "permalink": "Arch_8",
+      "i18n": {
+        "en": {
+          "title": "Arch 8"
+        },
+        "ru": {
+          "title": "Арх 8"
+        }
+      }
     },
     {
       "_id": "Arch 9",
       "type": "architecture",
       "src": "/build/images/projects/project-9.jpg",
-      "permalink": "Arch_9"
+      "permalink": "Arch_9",
+      "i18n": {
+        "en": {
+          "title": "Arch 9"
+        },
+        "ru": {
+          "title": "Арх 9"
+        }
+      }
     }
   ]
 }

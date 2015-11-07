@@ -2,15 +2,39 @@
   "nav": [
     {
       "_id": "Projects",
+      "i18n": {
+        "en": {
+          "title": "Projects"
+        },
+        "ru": {
+          "title": "Проекты"
+        }
+      },
       "permalink": "/projects",
       "children": [
         {
           "_id": "Architecture",
+          "i18n": {
+            "en": {
+              "title": "Architecture"
+            },
+            "ru": {
+              "title": "Архитектура"
+            }
+          },
           "type": "projects",
           "permalink": "/projects/architecture"
         },
         {
           "_id": "Design",
+          "i18n": {
+            "en": {
+              "title": "Design"
+            },
+            "ru": {
+              "title": "Дизайн"
+            }
+          },
           "type": "projects",
           "permalink": "/projects/design"
         }
@@ -18,6 +42,14 @@
     },
     {
       "_id": "About",
+      "i18n": {
+        "en": {
+          "title": "About"
+        },
+        "ru": {
+          "title": "Про Ткача"
+        }
+      },
       "permalink": "/about"
     }
   ]

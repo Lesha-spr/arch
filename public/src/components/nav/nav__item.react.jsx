@@ -20,7 +20,7 @@ class NavItem extends Component {
 
         return <div className='nav__item'>
             <Link className='ui-link' activeClassName='ui-link_state_active' to={this.props.permalink}>
-                <Translate content={`nav.${this.props._id}`}></Translate>
+                <Translate content={`nav-${this.props._id}.title`}></Translate>
             </Link>
             {children}
         </div>;

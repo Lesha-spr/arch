@@ -39,7 +39,7 @@ class Subnav extends Component {
                         className='ui-link ui-link_style1'
                         activeClassName='ui-link_state_active'
                         >
-                        <Translate content={`nav.${item._id}`}/>
+                        <Translate content={`nav-${item._id}.title`}/>
                     </Link>
                 </li>;
             })}
