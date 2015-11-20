@@ -21,6 +21,7 @@ class Images extends Component {
     }
 
     componentWillReceiveProps() {
+        // TODO: need deep compare of new images coming
         if (!this.props.async && _.includes(this._images, false)) {
             (this.props.before || _.noop)();
         }
