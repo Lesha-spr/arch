@@ -22,7 +22,7 @@ class Images extends Component {
 
     componentWillReceiveProps() {
         if (!this.props.async && _.includes(this._images, false)) {
-            //(this.props.before || _.noop)();
+            (this.props.before || _.noop)();
         }
     }
 

@@ -1,21 +1,19 @@
 import alt from './../../alt.js';
 
-class LocaleActions {
-    constructor() {
-        this.shouldWait = false;
-    }
+let shouldWait = false;
 
+class LocaleActions {
     asyncBefore(isWaiting) {
-        this.shouldWait = this.shouldWait || isWaiting;
+        shouldWait = shouldWait || isWaiting;
         this.dispatch(arguments);
     }
 
     asyncComplete(isStopped) {
-        if (this.shouldWait) {
+        if (shouldWait) {
             if (isStopped) {
                 this.dispatch(...arguments);
 
-                this.shouldWait = false;
+                shouldWait = false;
             }
         } else {
             this.dispatch(...arguments);
