@@ -13,52 +13,43 @@ class Root extends Component {
     constructor(props) {
         super(props);
 
-        this.state = _.assign(ProjectsStore.getAll(), RootStore.getRootState());
+        this.state = _.assign(ProjectsStore.getState(), RootStore.getState());
     }
 
     componentDidMount() {
-        RootStore.addBeforeAsyncListener(this.onBeforeAsync.bind(this));
-        RootStore.addCompleteAsyncListener(this.onCompleteAsync.bind(this));
-        ProjectsStore.addGetListener(this.onGet.bind(this));
-        ProjectsActions.get();
+        RootStore.listen(this.onAsync.bind(this));
+        ProjectsStore.listen(this.onGet.bind(this));
+
+        ProjectsActions.fetch();
         RootActions.asyncBefore(this.state.async);
     }
 
     componentWillUnmount() {
-        RootStore.removeBeforeAsyncListener(this.onBeforeAsync.bind(this));
-        RootStore.removeCompleteAsyncListener(this.onCompleteAsync.bind(this));
-        ProjectsStore.removeGetListener(this.onGet.bind(this));
+        RootStore.unlisten(this.onAsync.bind(this));
+        ProjectsStore.unlisten(this.onGet.bind(this));
     }
 
-    onBeforeAsync() {
-        this.setState({
-            async: RootStore.getRootState().async
-        });
+    onAsync(state) {
+        this.setState(state);
     }
 
-    onCompleteAsync() {
-        this.setState({
-            async: RootStore.getRootState().async
-        });
-    }
-
-    onGet() {
-        this.setState(ProjectsStore.getAll());
+    onGet(state) {
+        this.setState(state);
     }
 
     render() {
         let className = classNames({
             'root': true,
-            'root_state_loading': this.state.async
+            'root_state_loading': this.state._root.async
         });
-        let spinner = this.state.async ? <Spinner/> : '';
+        let spinner = this.state._root.async ? <Spinner/> : '';
 
         return <div className='layout'>
             {spinner}
             <div className={className}>
                 <Header/>
                 <main className='root__main'>
-                    {React.cloneElement(this.props.children, {root: this.state})}
+                    {React.cloneElement(this.props.children, this.state)}
                 </main>
                 <Footer/>
             </div>

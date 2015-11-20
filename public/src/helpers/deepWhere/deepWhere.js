@@ -18,6 +18,4 @@ let deepWhere = (collection, predicate) => {
     return ret;
 };
 
-_.mixin({
-    deepWhere: deepWhere
-});
+export default deepWhere;

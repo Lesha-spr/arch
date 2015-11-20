@@ -1,7 +1,7 @@
 .images {
   @include susy-clearfix();
 
-  &_state_loading {
+  .root_state_loading & {
     visibility: hidden;
   }
 }

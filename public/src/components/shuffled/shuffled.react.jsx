@@ -12,11 +12,10 @@ class Shuffled extends Component {
     }
 
     render() {
-
         return <div className='shuffled'>
-            <Images {...this.props}>
+            <Images className='images' async={this.props._root.async} before={RootActions.asyncBefore.bind(RootActions, true)} complete={RootActions.asyncComplete.bind(RootActions, true)}>
                 <div className='shuffled__inner'>
-                    {_.shuffle(this.props.root.projects).map(project => {
+                    {_.shuffle(this.props._projects.projects).map(project => {
                         return <Link key={project._id} to={`/projects/${project.type}/${project.permalink}`} className='ui-link shuffled__item'>
                             <span className='shuffled__item-link'><Translate content={`projects-${project._id}.title`}/></span>
                             <img
@@ -32,15 +31,15 @@ class Shuffled extends Component {
     }
 }
 
-Shuffled.propTypes = {
-    root: PropTypes.shape({
-        projects: PropTypes.arrayOf(PropTypes.shape({
-            _id: PropTypes.string,
-            type: PropTypes.string,
-            src: PropTypes.string
-        })),
-        async: PropTypes.bool
-    })
-};
+//Shuffled.propTypes = {
+//    root: PropTypes.shape({
+//        projects: PropTypes.arrayOf(PropTypes.shape({
+//            _id: PropTypes.string,
+//            type: PropTypes.string,
+//            src: PropTypes.string
+//        })),
+//        async: PropTypes.bool
+//    })
+//};
 
 export default Shuffled;

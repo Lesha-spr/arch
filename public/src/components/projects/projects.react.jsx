@@ -7,7 +7,7 @@ class Projects extends Component {
     }
 
     render() {
-        let children = this.props.children ? React.cloneElement(this.props.children, {root: this.props.root}) : '';
+        let children = this.props.children ? React.cloneElement(this.props.children, this.props) : '';
 
         return <div className='projects container'>
             <Subnav type='projects'/>

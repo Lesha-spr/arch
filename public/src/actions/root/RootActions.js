@@ -1,40 +1,30 @@
-import Dispatcher from './../../dispatcher.js';
-import {Root} from './../../constants.js';
+import alt from './../../alt.js';
 
-let shouldWait;
+class LocaleActions {
+    constructor() {
+        this.shouldWait = false;
+    }
 
-export default {
-    asyncBefore: (isWaiting) => {
-        shouldWait = shouldWait || isWaiting;
+    asyncBefore(isWaiting) {
+        this.shouldWait = this.shouldWait || isWaiting;
+        this.dispatch(arguments);
+    }
 
-        Dispatcher.dispatch({
-            type: Root.ActionTypes.ASYNC_BEFORE,
-            args: [...arguments]
-        });
-    },
-
-    asyncComplete: (isStopped) => {
-        if (shouldWait) {
+    asyncComplete(isStopped) {
+        if (this.shouldWait) {
             if (isStopped) {
-                Dispatcher.dispatch({
-                    type: Root.ActionTypes.ASYNC_COMPLETE,
-                    args: [...arguments]
-                });
+                this.dispatch(...arguments);
 
-                shouldWait = false;
+                this.shouldWait = false;
             }
         } else {
-            Dispatcher.dispatch({
-                type: Root.ActionTypes.ASYNC_COMPLETE,
-                args: [...arguments]
-            });
+            this.dispatch(...arguments);
         }
-    },
-
-    asyncError: () => {
-        Dispatcher.dispatch({
-            type: Root.ActionTypes.ASYNC_FAIL,
-            args: [...arguments]
-        });
     }
-};
+
+    asyncError() {
+        this.dispatch(...arguments);
+    }
+}
+
+export default alt.createActions(LocaleActions);

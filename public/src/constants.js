@@ -49,6 +49,6 @@ export const Projects = {
 
 export const Locale = {
     ActionTypes: keyMirror({
-        LOCALE_SET: null
+        LOCALE_SELECT: null
     })
 };

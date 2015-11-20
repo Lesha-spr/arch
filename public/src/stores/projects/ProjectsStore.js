@@ -1,52 +1,21 @@
-import {EventEmitter} from 'events';
-import Dispatcher from './../../dispatcher.js';
-import NavActions from './../../actions/nav/NavActions.js';
-import {Projects} from './../../constants.js';
+import alt from './../../alt.js';
+import ProjectsActions from './../../actions/projects/ProjectsActions.js';
+import RootStore from './../root/RootStore.js'
 
-const GET_EVENT = 'get';
-
-let _projects = {
-    projects: [],
-    projectsLoading: true
-};
-
-class ProjectsStore extends EventEmitter {
+class ProjectsStore {
     constructor() {
-        super(arguments);
+        this.bindActions(ProjectsActions);
+
+        this._projects = {
+            projects: [],
+            projectsLoading: true
+        };
     }
 
-    emitGet() {
-        this.emit(GET_EVENT);
-    }
-
-    addGetListener(callback) {
-        this.on(GET_EVENT, callback);
-    }
-
-    removeGetListener(callback) {
-        this.removeListener(GET_EVENT, callback);
-    }
-
-    getAll() {
-        return _projects;
+    fetch(data) {
+        this._projects = data;
+        this._projects.projectsLoading = false;
     }
 }
 
-let store = new ProjectsStore();
-
-store.dispatchToken = Dispatcher.register(action => {
-
-    switch(action.type) {
-
-        case Projects.ActionTypes.PROJECTS_GET:
-            _projects = action.data;
-            _projects.projectsLoading = false;
-
-            store.emitGet();
-
-            break;
-    }
-
-});
-
-export default store;
+export default alt.createStore(ProjectsStore, 'ProjectsStore');

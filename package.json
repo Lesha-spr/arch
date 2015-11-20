@@ -25,6 +25,7 @@
     "serve-favicon": "~2.2.1"
   },
   "devDependencies": {
+    "alt": "^0.17.9",
     "babel-jest": "^5.3.0",
     "babelify": "^6.3.0",
     "browserify": "^11.1.0",
@@ -44,9 +45,9 @@
     "jest-cli": "^0.6.1",
     "keymirror": "^0.1.1",
     "lodash": "^3.10.1",
-    "react": "^0.14.1",
-    "react-addons-test-utils": "^0.14.1",
-    "react-dom": "^0.14.1",
+    "react": "^0.14.2",
+    "react-addons-test-utils": "^0.14.2",
+    "react-dom": "^0.14.2",
     "react-interpolate-component": "^0.8.0",
     "react-router": "^1.0.0-rc3",
     "react-translate-component": "^0.10.0",

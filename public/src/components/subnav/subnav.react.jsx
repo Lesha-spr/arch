@@ -1,38 +1,34 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
 import Translate from 'react-translate-component';
-import _ from 'lodash';
 import NavStore from './../../stores/nav/NavStore.js';
-import deepWhere from './../../helpers/deepWhere/deepWhere.js';
+import _ from './../../helpers/lodash.mixins/lodash.mixins.js';
 
 class Subnav extends Component {
     constructor(props) {
         super(props);
+        this.state = NavStore.getState();
     }
 
     componentWillMount() {
-        this.setState({
-            nav: _.deepWhere(NavStore.getAll().nav, {type: this.props.type})
-        });
+        this.setState(NavStore.getState());
     }
 
     componentDidMount() {
-        NavStore.addGetListener(this.onGetNav.bind(this));
+        NavStore.listen(this.onGetNav.bind(this));
     }
 
     componentWillUnmount() {
-        NavStore.removeGetListener(this.onGetNav.bind(this));
+        NavStore.unlisten(this.onGetNav.bind(this));
     }
 
-    onGetNav() {
-        this.setState({
-            nav: _.deepWhere(NavStore.getAll().nav, {type: this.props.type})
-        });
+    onGetNav(state) {
+        this.setState(state);
     }
 
     render() {
         return <ul className='subnav'>
-            {this.state.nav.map(item => {
+            {_.deepWhere(this.state._nav.nav, {type: this.props.type}).map(item => {
                 return <li className='subnav__item' key={item._id}>
                     <Link
                         to={item.permalink}

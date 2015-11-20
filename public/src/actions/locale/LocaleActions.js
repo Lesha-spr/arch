@@ -1,11 +1,9 @@
-import Dispatcher from './../../dispatcher.js';
-import {Locale} from './../../constants.js';
+import alt from './../../alt.js';
 
-export default {
-    setLocale: (locale) => {
-        Dispatcher.dispatch({
-            type: Locale.ActionTypes.LOCALE_SET,
-            locale: locale
-        });
+class LocaleActions {
+    selectLocale(locale) {
+        this.dispatch(locale)
     }
-};
+}
+
+export default alt.createActions(LocaleActions);

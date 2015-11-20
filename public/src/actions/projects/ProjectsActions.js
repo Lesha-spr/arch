@@ -1,15 +1,13 @@
-import Dispatcher from './../../dispatcher.js';
-import {Projects, Root} from './../../constants.js';
+import alt from './../../alt.js';
 import projectsFetch from './projectsFetch.js';
 
-export default {
-    get: () => {
+class ProjectsActions {
+    fetch() {
         projectsFetch()
             .then(data => {
-                Dispatcher.dispatch({
-                    type: Projects.ActionTypes.PROJECTS_GET,
-                    data: data
-                });
+                this.dispatch(data);
             });
     }
-};
+}
+
+export default alt.createActions(ProjectsActions);

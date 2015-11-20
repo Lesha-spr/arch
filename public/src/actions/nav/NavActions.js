@@ -1,15 +1,13 @@
-import Dispatcher from './../../dispatcher.js';
-import {Nav} from './../../constants.js';
+import alt from './../../alt.js';
 import navFetch from './navFetch.js';
 
-export default {
-    get: () => {
+class LocaleActions {
+    fetch() {
         navFetch()
             .then(data => {
-                Dispatcher.dispatch({
-                    type: Nav.ActionTypes.NAV_GET,
-                    data: data
-                });
+                this.dispatch(data);
             });
     }
-};
+}
+
+export default alt.createActions(LocaleActions);

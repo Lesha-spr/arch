@@ -8,30 +8,30 @@ import NavItem from './nav__item.react.jsx';
 class Nav extends Component {
     constructor(props) {
         super(props);
-        this.state = NavStore.getAll();
+        this.state = NavStore.getState();
     }
 
     componentDidMount() {
-        NavStore.addGetListener(this.onGet.bind(this));
-        NavActions.get();
+        NavStore.listen(this.onGet.bind(this));
+        NavActions.fetch();
     }
 
     componentWillUnmount() {
-        NavStore.removeGetListener(this.onGet.bind(this));
+        NavStore.unlisten(this.onGet.bind(this));
     }
 
-    onGet() {
-        this.setState(NavStore.getAll());
+    onGet(state) {
+        this.setState(state);
     }
 
     render() {
         let className = classNames({
             'nav': true,
-            'nav_state_loading': this.state.loading
+            'nav_state_loading': this.state._nav.loading
         });
 
         return <nav className={className}>
-            {this.state.nav.map(item => {
+            {this.state._nav.nav.map(item => {
                 return <NavItem key={item._id} {...item}/>;
             })}
         </nav>;

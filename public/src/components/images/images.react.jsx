@@ -1,35 +1,29 @@
 import React, {Component, PropTypes} from 'react';
 import _ from 'lodash';
-import classNames from 'classnames';
-import RootActions from './../../actions/root/RootActions.js';
 
 class Images extends Component {
     constructor(props) {
         super(props);
 
-        this.imagesLoadedLength = 0;
-        this.imagesLength = 0;
+        this._images = {};
     }
 
     componentWillMount() {
-        RootActions.asyncBefore(true);
+        (this.props.before || _.noop)();
     }
 
-    _handleLoad() {
-        this.imagesLoadedLength++;
+    _handleLoad(src) {
+        this._images[src] = true;
 
-        if (this.imagesLoadedLength === this.imagesLength) {
-            RootActions.asyncComplete(true);
+        if (!_.includes(this._images, false)) {
+            (this.props.complete || _.noop)();
         }
     }
 
     componentWillReceiveProps() {
-        if (!this.props.root.async) {
-            RootActions.asyncBefore(true);
+        if (!this.props.async && _.includes(this._images, false)) {
+            //(this.props.before || _.noop)();
         }
-
-        this.imagesLoadedLength = 0;
-        this.imagesLength = 0;
     }
 
     _recursiveCloneChildren(children, index) {
@@ -43,10 +37,13 @@ class Images extends Component {
             var childProps = {};
 
             if (child.type === 'img') {
-                this.imagesLength++;
 
-                childProps.onLoad = this._handleLoad.bind(this);
-                childProps.onError = this._handleLoad.bind(this);
+                childProps.ref = child.props.ref || $idx;
+                childProps.onLoad = this._handleLoad.bind(this, child.props.src);
+                childProps.onError = this._handleLoad.bind(this, child.props.src);
+
+                this._images[child.props.src] = this._images[child.props.src] || false;
+                $idx++;
             }
 
             childProps.children = this._recursiveCloneChildren(child.props.children, $idx);
@@ -56,12 +53,7 @@ class Images extends Component {
     }
 
     render() {
-        let className = classNames({
-            'images': true,
-            'images_state_loading': this.props.root.async
-        });
-
-        return <div {...this.props} className={className}>
+        return <div {...this.props}>
             {this._recursiveCloneChildren(this.props.children, 0)}
         </div>;
     }

@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import _ from 'lodash';
 import Translate from 'react-translate-component';
 import Images from './../images/images.react.jsx';
-import ProjectsStore from './../../stores/projects/ProjectsStore.js';
 import RootActions from './../../actions/root/RootActions.js';
 
 class ProjectsList extends Component {
@@ -12,10 +11,10 @@ class ProjectsList extends Component {
     }
 
     render() {
-        let projects = _.where(this.props.root.projects, {type: this.props.params.category});
+        let projects = _.where(this.props._projects.projects, {type: this.props.params.category});
 
         return <div className='projects-list'>
-            <Images {...this.props}>
+            <Images async={this.props._root.async} className='images' before={RootActions.asyncBefore.bind(RootActions, true)} complete={RootActions.asyncComplete.bind(RootActions, true)}>
                 {projects.map(project => {
                     return <div className='projects-list__item' key={project._id}>
                         <h3>

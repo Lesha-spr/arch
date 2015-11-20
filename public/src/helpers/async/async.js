@@ -2,7 +2,7 @@ import Dispatcher from './../../dispatcher.js';
 import {Root} from './../../constants.js';
 import RootActions from './../../actions/root/RootActions.js';
 import _ from 'lodash';
-import registerTranslations from './../registerTranslations/registerTranslations.js'
+import registerTranslations from './../registerTranslations/registerTranslations.js';
 
 export default (params) => {
     return {
