@@ -5,7 +5,10 @@ let shouldWait = false;
 class LocaleActions {
     asyncBefore(isWaiting) {
         shouldWait = shouldWait || isWaiting;
-        this.dispatch(arguments);
+
+        if (!this.alt.dispatcher.isDispatching()) {
+            this.dispatch(arguments);
+        }
     }
 
     asyncComplete(isStopped) {

@@ -13,6 +13,8 @@
 
       .projects-list__item {
         @include span(2);
+        -webkit-animation: fadein 1s 1;
+        animation: fadein 1s 1;
         margin-bottom: 20px;
       }
 

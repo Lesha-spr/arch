@@ -31,15 +31,19 @@ class Shuffled extends Component {
     }
 }
 
-//Shuffled.propTypes = {
-//    root: PropTypes.shape({
-//        projects: PropTypes.arrayOf(PropTypes.shape({
-//            _id: PropTypes.string,
-//            type: PropTypes.string,
-//            src: PropTypes.string
-//        })),
-//        async: PropTypes.bool
-//    })
-//};
+Shuffled.propTypes = {
+    _root: PropTypes.shape({
+        async: PropTypes.bool
+    }),
+    _projects: PropTypes.shape({
+        projects: PropTypes.arrayOf(
+            PropTypes.shape({
+                _id: PropTypes.string,
+                permalink: PropTypes.string,
+                src: PropTypes.string
+            })
+        )
+    })
+};
 
 export default Shuffled;

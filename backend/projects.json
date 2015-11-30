@@ -7,10 +7,12 @@
       "permalink": "arch_1",
       "i18n": {
         "en": {
-          "title": "Arch 1"
+          "title": "Arch 1",
+          "lead": "Architecture project #1"
         },
         "ru": {
-          "title": "Арх 1"
+          "title": "Арх 1",
+          "lead": "Архитектурный проект №1"
         }
       }
     },
@@ -21,10 +23,12 @@
       "permalink": "arch_2",
       "i18n": {
         "en": {
-          "title": "Arch 2"
+          "title": "Arch 2",
+          "lead": "Architecture project #2"
         },
         "ru": {
-          "title": "Арх 2"
+          "title": "Арх 2",
+          "lead": "Архитектурный проект №2"
         }
       }
     },
@@ -35,10 +39,12 @@
       "permalink": "arch_3",
       "i18n": {
         "en": {
-          "title": "Arch 3"
+          "title": "Arch 3",
+          "lead": "Architecture project #3"
         },
         "ru": {
-          "title": "Арх 3"
+          "title": "Арх 3",
+          "lead": "Архитектурный проект №3"
         }
       }
     },
@@ -49,10 +55,12 @@
       "permalink": "arch_4",
       "i18n": {
         "en": {
-          "title": "Arch 4"
+          "title": "Arch 4",
+          "lead": "Architecture project #4"
         },
         "ru": {
-          "title": "Арх 4"
+          "title": "Арх 4",
+          "lead": "Архитектурный проект №4"
         }
       }
     },
@@ -63,10 +71,12 @@
       "permalink": "arch_5",
       "i18n": {
         "en": {
-          "title": "Arch 5"
+          "title": "Arch 5",
+          "lead": "Architecture project #5"
         },
         "ru": {
-          "title": "Арх 5"
+          "title": "Арх 5",
+          "lead": "Архитектурный проект №5"
         }
       }
     },
@@ -77,10 +87,12 @@
       "permalink": "arch_6",
       "i18n": {
         "en": {
-          "title": "Arch 6"
+          "title": "Arch 6",
+          "lead": "Architecture project #6"
         },
         "ru": {
-          "title": "Арх 6"
+          "title": "Арх 6",
+          "lead": "Архитектурный проект №6"
         }
       }
     },
@@ -91,10 +103,12 @@
       "permalink": "arch_7",
       "i18n": {
         "en": {
-          "title": "Arch 7"
+          "title": "Arch 7",
+          "lead": "Architecture project #7"
         },
         "ru": {
-          "title": "Арх 7"
+          "title": "Арх 7",
+          "lead": "Архитектурный проект №7"
         }
       }
     },
@@ -105,10 +119,12 @@
       "permalink": "arch_8",
       "i18n": {
         "en": {
-          "title": "Arch 8"
+          "title": "Arch 8",
+          "lead": "Architecture project #8"
         },
         "ru": {
-          "title": "Арх 8"
+          "title": "Арх 8",
+          "lead": "Архитектурный проект №8"
         }
       }
     },
@@ -119,10 +135,12 @@
       "permalink": "arch_9",
       "i18n": {
         "en": {
-          "title": "Arch 9"
+          "title": "Arch 9",
+          "lead": "Architecture project #9"
         },
         "ru": {
-          "title": "Арх 9"
+          "title": "Арх 9",
+          "lead": "Архитектурный проект №9"
         }
       }
     },
@@ -133,10 +151,12 @@
       "permalink": "design_1",
       "i18n": {
         "en": {
-          "title": "Design 1"
+          "title": "Design 1",
+          "lead": "Design project #1"
         },
         "ru": {
-          "title": "Дизайн 1"
+          "title": "Дизайн 1",
+          "lead": "Дизайн проект №1"
         }
       }
     }

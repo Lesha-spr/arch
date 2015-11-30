@@ -8,7 +8,7 @@ class Images extends Component {
         this._images = {};
     }
 
-    componentWillMount() {
+    componentDidMount() {
         (this.props.before || _.noop)();
     }
 
@@ -17,13 +17,6 @@ class Images extends Component {
 
         if (!_.includes(this._images, false)) {
             (this.props.complete || _.noop)();
-        }
-    }
-
-    componentWillReceiveProps() {
-        // TODO: need deep compare of new images coming
-        if (!this.props.async && _.includes(this._images, false)) {
-            (this.props.before || _.noop)();
         }
     }
 
